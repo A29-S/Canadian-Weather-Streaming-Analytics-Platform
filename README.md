@@ -1,235 +1,345 @@
-Project Overview
+<h1 align="center">
+🌦️ Canadian Weather Data Engineering & Analytics Pipeline
+</h1>
 
-This project builds an end-to-end data engineering and analytics pipeline for exploring Canadian weather data.
+<p align="center">
+End-to-End Data Engineering • Streaming Pipelines • Machine Learning • Interactive Analytics
+</p>
 
-The system processes historical climate data and simulates a real-time streaming architecture where weather observations are ingested, processed, and analyzed through an interactive dashboard.
+<p align="center">
+<img src="https://img.shields.io/badge/Python-3.9+-blue">
+<img src="https://img.shields.io/badge/Apache-Kafka-black">
+<img src="https://img.shields.io/badge/Apache-Spark-orange">
+<img src="https://img.shields.io/badge/Streamlit-Dashboard-red">
+<img src="https://img.shields.io/badge/Database-SQLite-lightgrey">
+<img src="https://img.shields.io/badge/ML-ScikitLearn-green">
+</p>
+
+---
+
+# 🚀 Live Demo
+
+### Interactive Streamlit Dashboard
+
+🔗 **Launch the Dashboard**
+
+https://weather-dashboard-group6.streamlit.app
+
+---
+
+# 📊 Project Overview
+
+This project builds an **end-to-end data engineering and analytics pipeline** for exploring Canadian climate data.
+
+The system processes historical weather datasets and simulates a **real-time streaming architecture** where weather observations are ingested, processed, and analyzed through an interactive dashboard.
 
 The platform allows users to:
 
-Explore long-term weather trends
+✔ Explore **long-term weather trends**  
+✔ Detect **extreme weather events**  
+✔ Perform **statistical analysis**  
+✔ Run **regression models on climate variables**  
+✔ Visualize **interactive time-series data**
 
-Detect extreme weather events
+---
 
-Perform statistical analysis
+# 🧠 Skills Demonstrated
 
-Run regression models on climate variables
+This project highlights experience in:
 
-The project demonstrates skills in:
+- Data Engineering  
+- Streaming Data Pipelines  
+- Big Data Processing  
+- Machine Learning  
+- Interactive Data Visualization  
 
-Data Engineering
+---
 
-Streaming Data Pipelines
+# 🏗️ System Architecture
 
-Machine Learning
-
-Interactive Data Visualization
-
-Big Data Processing
-
-Live Demo
-
-Streamlit Dashboard
-(weather-dashboard-group6.streamlit.app)
-
-Architecture
-
-Data flows through a streaming pipeline:
-
+The platform simulates a **real-time streaming pipeline for climate analytics**.
 Government Climate Data (CSV)
-        │
-        ▼
+│
+▼
 Data Cleaning & Transformation
 (Python / Pandas)
-        │
-        ▼
+│
+▼
 Kafka Producer
-        │
-        ▼
+│
+▼
 Spark Streaming
-        │
-        ▼
+│
+▼
 SQLite Analytics Database
-        │
-        ▼
+│
+▼
 Streamlit Dashboard
-        │
-        ▼
+│
+▼
 Statistical Analysis & ML Models
 
-Technologies used:
+Government Climate Data (CSV)
+│
+▼
+Data Cleaning & Transformation
+(Python / Pandas)
+│
+▼
+Kafka Producer
+│
+▼
+Spark Streaming
+│
+▼
+SQLite Analytics Database
+│
+▼
+Streamlit Dashboard
+│
+▼
+Statistical Analysis & ML Models
 
-Python
 
-Apache Kafka
+---
 
-Apache Spark Streaming
+# ⚙️ Technologies Used
 
-SQLite
+| Category | Tools |
+|--------|--------|
+| Programming | Python |
+| Streaming | Apache Kafka |
+| Big Data Processing | Apache Spark Streaming |
+| Data Processing | Pandas |
+| Machine Learning | Scikit-Learn |
+| Visualization | Streamlit |
+| Database | SQLite |
 
-Pandas
+---
 
-Scikit-Learn
+# 🌎 Dataset
 
-Streamlit
+The data is sourced from the **Government of Canada Climate Data Portal**.
 
-Dataset
+### Climate Variables
 
-Data comes from the Government of Canada Climate Data Portal.
+- Temperature *(minimum / maximum / median)*
+- Precipitation *(rain / snow)*
+- Wind speed
+- Atmospheric pressure
+- Weather station metadata
 
-Variables include:
+### Locations Analyzed
 
-Temperature (min / max / median)
+🇨🇦 Toronto  
+🇨🇦 Vancouver  
+🇨🇦 Edmonton  
+🇨🇦 Halifax  
+🇨🇦 St George  
+🇨🇦 Inuvik  
 
-Precipitation (rain / snow)
+---
 
-Wind speed
+# 🔧 Key Features
 
-Atmospheric pressure
+---
 
-Geographic station metadata
+## 📦 Data Pipeline
 
-Locations analyzed:
+The pipeline processes raw weather station datasets and converts them into **structured analytical datasets**.
 
-Toronto
+### Processing Steps
 
-Vancouver
+- Parsing temporal fields into **datetime objects**
+- Feature extraction *(year, month, season)*
+- Handling **missing values**
+- Standardizing **weather measurements**
+- Aggregating **station-level observations**
 
-Edmonton
+---
 
-Halifax
+## 🔄 Streaming Architecture
 
-St George
+Kafka acts as a **message broker** that streams weather observations into the analytics pipeline.
 
-Inuvik
+Spark Streaming processes incoming records and writes them to a **structured SQLite analytics database**.
 
-Key Features
-Data Pipeline
+This architecture simulates a **real-time ingestion pipeline** that could easily be extended to **live climate data feeds**.
 
-The pipeline processes raw weather station datasets and transforms them into structured analytical datasets.
+---
 
-Steps include:
+## Streaming Pipeline Diagram
 
-Parsing temporal fields into datetime objects
+<p align="center">
+<img src="https://github.com/user-attachments/assets/66c0b418-6871-4b7b-b699-a87b4a650449" width="900">
+</p>
 
-Feature extraction (year, month, season)
+---
 
-Handling missing values
+## 📊 Interactive Dashboard
 
-Standardizing weather measurements
+The **Streamlit dashboard** allows users to explore the dataset through multiple analytical tools.
 
-Aggregating station-level observations
+### Users Can
 
-Streaming Architecture
+✔ Filter by **location**  
+✔ Select **climate variables**  
+✔ Explore **seasonal trends**  
+✔ Visualize **time-series data**  
+✔ Generate **descriptive statistics**
 
-Data processing pipeline
-<img width="1412" height="820" alt="image" src="https://github.com/user-attachments/assets/66c0b418-6871-4b7b-b699-a87b4a650449" />
+---
 
+## 🌡️ Extreme Event Detection
 
-Kafka acts as a message broker that streams weather observations into the analytics pipeline.
+The dashboard includes tools to identify **extreme climate events**.
 
-Spark Streaming processes the incoming records and writes them to a structured SQLite analytics database.
+Users can define thresholds to detect:
 
-This architecture simulates a real-time data ingestion pipeline that could be extended to live climate data feeds.
+🔥 Heat waves  
+🌧 Heavy precipitation  
+💨 High wind events  
 
-Interactive Dashboard
+This enables exploration of **climate anomalies across regions**.
 
-The Streamlit dashboard allows users to explore the dataset through multiple analytical tools.
+---
 
-Users can:
+## 📈 Statistical Analysis
 
-Filter by location
+The dashboard supports several statistical tools.
 
-Select variables
+---
 
-Explore seasonal trends
+## Descriptive Statistics
 
-Visualize time series data
+Provides key dataset summaries:
 
-Generate descriptive statistics
+- Mean
+- Standard deviation
+- Quartiles
 
-Extreme Event Detection
+---
 
-The dashboard includes tools to detect extreme weather events.
+## Correlation Analysis
 
-Users can define thresholds to identify:
+A **correlation matrix** visualizes relationships between climate variables such as:
 
-Heat waves
+- Temperature
+- Precipitation
+- Wind speed
+- Atmospheric pressure
 
-Heavy precipitation
+---
 
-High wind events
+## Regression Modeling
 
-This enables exploration of climate anomalies across regions.
+### Simple Linear Regression
 
-Statistical Analysis
-
-The dashboard supports several statistical tools:
-
-Descriptive Statistics
-
-Summary statistics including:
-
-Mean
-
-Standard deviation
-
-Quartiles
-
-Correlation Analysis
-
-A correlation matrix visualizes relationships between climate variables such as:
-
-Temperature
-
-Precipitation
-
-Wind speed
-
-Atmospheric pressure
-
-Regression Modeling
-
-The system supports:
-
-Simple Linear Regression
-
-Predicting one variable from another.
+Predicts one variable from another.
 
 Example:
 
 Temperature vs Atmospheric Pressure
 
-Multiple Linear Regression
+---
 
-Predicting weather outcomes using multiple predictors.
+### Multiple Linear Regression
 
-Outputs include:
+Predicts weather outcomes using multiple predictors.
 
-Regression coefficients
+Model outputs include:
 
-R² score
+- Regression coefficients
+- **R² score**
+- Predicted vs actual plots
+- Residual plots
 
-Predicted vs actual plots
+---
 
-Residual plots
+# 🖥️ Example Dashboard Outputs
 
-Example Dashboard Output
-Dashboard Overview
-<img width="2241" height="1388" alt="image" src="https://github.com/user-attachments/assets/a21e8a6e-2259-418a-8969-3167f368a22b" />
+---
 
-Extreme Events: Summer Months in Toronto above 22C from 1840 - 1999
-<img width="2237" height="1384" alt="image" src="https://github.com/user-attachments/assets/5553934a-1fa4-4f09-85af-4c6b2189c0e3" />
+## Dashboard Overview
 
-Time Series for Mean Precipitation in April from 1990 - 1999
-<img width="2232" height="1383" alt="image" src="https://github.com/user-attachments/assets/5d734729-574f-4a96-af82-701a764dfefc" />
+<p align="center">
+<img src="https://github.com/user-attachments/assets/a21e8a6e-2259-418a-8969-3167f368a22b" width="900">
+</p>
 
-Correlation Matrix
-<img width="2243" height="1398" alt="image" src="https://github.com/user-attachments/assets/03b7356b-5869-4ce0-b748-84ee4d956fc5" />
+---
 
-Scatterplot
-<img width="2255" height="1106" alt="image" src="https://github.com/user-attachments/assets/e6d3c7ed-9079-454e-9668-c95b8b183fb1" />
+## Extreme Events  
+**Summer Months in Toronto above 22°C (1840–1999)**
 
-MLR
-<img width="2280" height="1341" alt="image" src="https://github.com/user-attachments/assets/42a106b9-9ef8-4fc5-8e8e-1fdc705bc3a2" />
+<p align="center">
+<img src="https://github.com/user-attachments/assets/5553934a-1fa4-4f09-85af-4c6b2189c0e3" width="900">
+</p>
 
+---
 
+## Time Series Example  
+**Mean Precipitation in April (1990–1999)**
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/5d734729-574f-4a96-af82-701a764dfefc" width="900">
+</p>
+
+---
+
+## Correlation Matrix
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/03b7356b-5869-4ce0-b748-84ee4d956fc5" width="900">
+</p>
+
+---
+
+## Scatterplot Analysis
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/e6d3c7ed-9079-454e-9668-c95b8b183fb1" width="900">
+</p>
+
+---
+
+## Multiple Linear Regression Output
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/42a106b9-9ef8-4fc5-8e8e-1fdc705bc3a2" width="900">
+</p>
+
+# ▶️ Running the Project
+
+Follow these steps to run the weather streaming pipeline locally.
+
+---
+
+## 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/weather-streaming-dashboard
+cd weather-streaming-dashboard
+2️⃣ Install Dependencies
+
+Install all required Python packages.
+
+pip install -r requirements.txt
+3️⃣ Start Kafka Producer
+
+This script streams weather observations into the Kafka pipeline.
+
+python kafka_producer.py
+4️⃣ Run Spark Streaming Job
+
+The Spark job consumes Kafka messages and writes processed records to the analytics database.
+
+spark-submit streaming_job.py
+5️⃣ Launch the Dashboard
+
+Start the interactive analytics dashboard.
+
+streamlit run dashboard.py
+
+The dashboard will open in your browser at:
+
+http://localhost:8501
