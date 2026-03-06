@@ -15,15 +15,15 @@ conn = sqlite3.connect(db_path)
 
 #Clean up naming convention
 display_to_column = {
-    "Mean Temperature": "temp_mean__temp_moyenne",
-    "Max Temperature": "temp_max__temp_max",
-    "Min Temperature": "temp_min__temp_min",
-    "Total Precip": "total_precip__precip_totale",
-    "Rain": "rain_mm",
-    "Snow": "snow_mm",
-    "Sea Level Pressure": "pressure_sea_level_hpa",
-    "Station Pressure": "pressure_station_hpa",
-    "Wind Speed": "wind_speed_kph"
+    "Mean Temperature (C)": "temp_mean__temp_moyenne",
+    "Max Temperature (C)": "temp_max__temp_max",
+    "Min Temperature (C)": "temp_min__temp_min",
+    "Total Precip (mm)": "total_precip__precip_totale",
+    "Rain (mm)": "rain_mm",
+    "Snow (mm)": "snow_mm",
+    "Sea Level Pressure (hpa)": "pressure_sea_level_hpa",
+    "Station Pressure (hpa)": "pressure_station_hpa",
+    "Wind Speed (kph)": "wind_speed_kph"
 }
 
 numeric_cols = list(display_to_column.values())
@@ -139,11 +139,28 @@ if analysis_mode == "Single Variable Analysis":
     #Data Outliers 
     if selected_operation == "Extreme Events / Anomalies":
         st.subheader("Extreme Events / Anomalies")
-        threshold = st.number_input(f"Threshold for {selected_column_display}", value=0.0)
-        extreme_events = city_data[city_data[selected_column_display] > threshold]
-        preview_no_time = extreme_events.drop(columns=["time"])
-        st.dataframe(preview_no_time)
-        # st.dataframe(extreme_events)
+
+        threshold = st.number_input(
+            f"Threshold for {selected_column_display}",
+            value=0.0
+        )
+
+        comparison = st.radio(
+            "Select threshold type:",
+            ["Above threshold", "Below threshold"]
+        )
+
+        if comparison == "Above threshold":
+            extreme_events = city_data[city_data[selected_column_display] >= threshold]
+        else:
+            extreme_events = city_data[city_data[selected_column_display] <= threshold]
+
+        if extreme_events.empty:
+            st.warning("No extreme events found for the selected threshold.")
+        else:
+            preview_no_time = extreme_events.drop(columns=["time"])
+            st.dataframe(preview_no_time)
+
 
 
 #Correlation analysis section
